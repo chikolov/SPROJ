@@ -1,0 +1,183 @@
+	The statistical analysis in this project is based on three datasets obtained from the Panel Study of Income Dynamics (PSID) Child Development Supplement (CDS), specifically the surveys conducted in 2014, 2019, and 2021. These datasets contain variables related to children’s academic performance, household environment, extracurricular engagement, and participation in music-related and arts-related activities. The inclusion of multiple years provides an opportunity not only to analyze the relationship between music education and academic performance in a specific year, but also to analyze any trends and establish whether correlations remain stable over time. 
+	The first part of my analysis consisted of data cleaning and reduction of variables. Only variables directly relevant to music engagement, arts participation, and academic performance were kept from the full PSID datasets. These included variables indicating the presence of musical instruments in the home, participation in music lessons, general music participation, use of electronics for music listening, participation in arts tutoring, involvement in community arts groups, and arts participation in religious settings. In addition, demographic variables such as sex and the variables necessary for calculating normalized GPA were also kept in the cleaned dataset. 
+	After isolating the relevant variables, datapoints with missing or inapplicable values in the GPA variables were also removed. In the PSID dataset, GPA values are recorded along with the scale on which the GPA is measured. Because different schools use different grading scales (for example, 4.0 scales, 5.0 scales, 4.5 scales, and other systems), it was necessary to standardize GPA values across all datasets for the sake of clarity. This was accomplished by normalizing GPA as a percentage of the highest possible GPA using the formula:
+ GPAnormalized = GPAraw / GPAscale ​
+	This normalization ensures that all GPA values fall within the same 0–1 range (0 to 100%), allowing for clarity within the comparisons across different school systems and across the three years included in the study. 
+	​After removing observations with missing GPA data and filtering the datasets to include only valid responses for the selected variables, the final sample sizes were as follows:
+
+2014 dataset: 399 participants
+2019 dataset: 469 participants
+2021 dataset: 305 participants
+
+The combined dataset used in the regression analysis therefore includes a total of 1,164 participants.
+
+GPA Statistics (2014)
+Count: 399
+Mean: 0.781
+Median: 0.786
+Std: 0.149
+
+GPA Statistics (2019)
+Count: 469
+Mean: 0.793
+Median: 0.82
+Std: 0.153
+
+GPA Statistics (2021)
+Count: 305
+Mean: 0.809
+Median: 0.82
+Std: 0.142
+
+GPA Distribution
+
+	The first step of the statistical analysis involved looking into the shape of the distribution of normalized GPA values in each of the three datasets. This step is important because understanding the distribution of the dependent variable provides insight into the performance of the sample and helps determine whether the assumptions of later statistical tests are reasonable.
+
+	In the 2021 dataset, the normalized GPA values produced a mean of 0.809, a median of 0.820, and a standard deviation of 0.142. The distribution is clearly left-skewed, meaning that a large proportion of students cluster near the upper end of the GPA scale while a smaller number of students occupy the lower end. This pattern is consistent with typical academic grading distributions, where the maximum possible GPA constrains the upper limit of the distribution while allowing a longer lower tail.
+	Histogram
+
+	The 2019 dataset shows a very similar pattern. The mean normalized GPA in 2019 is 0.793, the median remains at 0.820, and the standard deviation is 0.153. The slightly lower mean GPA compared to 2021 suggests minor variation in academic performance across different years. With that siad, the identical median value indicates that the central tendency of student performance remains largely unchanged.
+
+	Histogram 
+
+	The 2014 dataset exhibits the same general distributional structure. The mean normalized GPA in 2014 is 0.781, the median is 0.786, and the standard deviation is 0.149. Compared with the later datasets, the slightly lower mean and median values could suggest an upward shift in GPA over time, though the overall structure of the distribution remains highly consistent across all three years.
+
+	Histogram
+
+	Taken together, the GPA distributions across the three datasets remain very consistent.  Most students fall within the normalized GPA range of approximately 0.75 to 0.90, which corresponds roughly to letter grades between B- and A– on a traditional four-point scale. The stability of the standard deviation across all three years also indicates that the overall variability in academic performance remains relatively constant across cohorts.
+
+
+	
+T-tests
+
+
+After the analysis of the distribution of GPA values, the next step of the analysis involved conducting a series of independent t-tests. The purpose of these tests was to determine whether students who participated in specific music-related or arts-related activities exhibited statistically significant differences in academic performance compared to students who did not.
+	The t-tests were applied to several binary variables, including participation in music lessons, general music participation, the presence of a musical instrument in the home, participation in arts tutoring, involvement in community arts groups, and participation in arts-related activities within religious settings.
+	One of the most consistent results across all three datasets was for the variable representing the presence of a musical instrument in the home. In the 2021 dataset, this variable produced a statistically significant result with t = 3.478 and p = 0.001. The 2019 dataset produced a similar result (t = 2.917, p = 0.004), while the 2014 dataset produced an even stronger result (t = 4.095, p < 0.001). The consistency of this finding across multiple cohorts strongly suggests that the presence of a musical instrument in the household is meaningfully associated with differences in GPA.
+	
+	Plots of instrument at home for all 3 years
+
+	In contrast, the variable representing participation in music lessons within the last year produced mixed results. In the 2021 dataset, the t-test produced t = 1.498 with p = 0.135, indicating no statistically significant difference in GPA between students who took lessons and those who did not. The 2019 dataset produced a similar result (p = 0.121), while the 2014 dataset produced a statistically significant result (t = 2.157, p = 0.032). This inconsistency suggests that the relationship between music lessons and academic performance may vary across class years or may depend on additional factors outside of the binary variable alone.
+	
+	Plots for music lessons all 3 years
+
+Participation in general music activities produced non-significant results in most datasets. While the 2021 dataset produced a result approaching statistical significance (p = 0.085), neither the 2019 nor the 2014 datasets showed meaningful differences in GPA between participants and non-participants.
+
+	General music participation all 3 years
+
+The overall result of the t-test results suggest that simple binary indicators of musical participation are not consistently strong predictors of academic performance. However, socioeconomic related factors such as access to a musical instrument appear to have a more stable relationship with GPA outcomes.
+
+
+Ordinal variables
+
+	In addition to the binary variables, the dataset included two ordinal variables that reported the level of engagement with a certain aspect of music. In contrast to the simple yes/no indicators, ordinal variables provide a more nuanced view of how frequently students engage in music-related activities.
+
+	The first ordinal variable measures the frequency with which students used electronic devices to listen to music within the past 30 days. The distribution of this variable is heavily skewed toward the highest frequency category. In the 2021 dataset  224 students reported listening to music every day, while only a small number of students reported rare or no engagement. A nearly identical distribution is observed in the 2019 dataset and the 2014 dataset.
+
+[Insert Figure 7 here – Histogram of Electronics Use for Music (2021 dataset)]
+[Insert Figure 8 here – Histogram of Electronics Use for Music (2019 dataset)]
+[Insert Figure 9 here – Histogram of Electronics Use for Music (2014 dataset)]
+
+	Because the distribution is so heavily concentrated at the highest engagement level, the variable has limited ability to show us a difference between students. Music listening through electronic devices appears to be nearly universal among students, which reduces its usefulness as a predictor of academic performance.
+
+	The second ordinal variable measures frequency of instrument use. Unlike the electronics variable, this variable shows a much more balanced distribution. In the 2021 dataset, the largest group of students falls into the lowest frequency category, with progressively smaller groups at higher levels of engagement. The 2019 and 2014 datasets show similar patterns.
+
+[Insert Figure 10 here – Histogram of Instrument Use Frequency (2021 dataset)]
+[Insert Figure 11 here – Histogram of Instrument Use Frequency (2019 dataset)]
+[Insert Figure 12 here – Histogram of Instrument Use Frequency (2014 dataset)]
+
+	This distribution suggests that while many students may have access to musical instruments, the level of actual engagement varies significantly. This variation makes the variable particularly valuable when examining whether there is a deeper meaning and correlation between musical involvement and the way it is associated with academic performance.
+
+
+Correlations
+
+	To further deepen the understanding of the relationship between musical engagement and academic performance, point-biserial correlation coefficients were calculated. This method is appropriate when one variable is continuous (GPA) and the other variable is binary (participation vs. non-participation).
+
+	Across all three datasets, the magnitude of the correlations remains relatively small. Most correlation coefficients fall within the range of 0.07 to 0.20, indicating weak but measurable relationships between music-related variables and GPA.
+
+	The strongest and most consistent correlation across all datasets was observed for the presence of a musical instrument in the home. This is consistent with the t-test observations from earlier. In the 2021 dataset, this variable produced a correlation coefficient of r = −0.196 with p = 0.001. Similar results appear in the 2019 and 2014 datasets, suggesting that this variable is one of the most stable predictors of academic performance among the variables examined.
+
+[Insert Table 2 here – Point-biserial correlation results for 2014, 2019, and 2021 datasets]
+Point-Biserial Correlations 2021
+Music Lessons → r = -0.086 p = 0.135
+Music Lesson Participation → r = 0.012 p = 0.837
+Instrument at Home → r = -0.196 p = 0.001
+Arts Tutoring → r = -0.062 p = 0.277
+Arts Community Groups → r = 0.044 p = 0.448
+Arts Religious Performance → r = 0.141 p = 0.014
+
+Point-Biserial Correlations 2019
+Music Lessons → r = -0.072 p = 0.121
+Music Lesson Participation → r = 0.078 p = 0.094
+Instrument at Home → r = -0.135 p = 0.004
+Arts Tutoring → r = -0.134 p = 0.004
+Arts Community Groups → r = 0.15 p = 0.001
+Arts Religious Performance → r = 0.071 p = 0.126
+
+Point-Biserial Correlations 2014
+Music Lessons → r = -0.103 p = 0.041
+Music Lesson Participation → r = 0.07 p = 0.166
+Instrument at Home → r = -0.203 p = 0.0
+Arts Tutoring → r = -0.122 p = 0.015
+Arts Community Groups → r = 0.082 p = 0.103
+Arts Religious Performance → r = 0.121 p = 0.016
+
+
+	Other variables produced smaller and less consistent correlations. For example, participation in arts tutoring and participation in community arts groups produced statistically significant results in some datasets but not in others. This inconsistency suggests that while arts engagement may be related to academic performance, the strength of the relationship likely depends on additional factors such as family background, socioeconomic status, or school environment.
+
+
+Multivariable regression analysis
+
+	To better understand the combined influence of multiple variables, a multivariate linear regression model was estimated using the combined dataset from 2014, 2019, and 2021. After removing observations with missing values in any of the variables included in the model, the final sample size consisted of 1,164 students.
+
+	The dependent variable in the model was normalized GPA. Independent variables included participation in music lessons, general music participation, the presence of a musical instrument in the home, frequency of instrument use, electronic music listening, participation in arts tutoring, participation in community arts groups, participation in arts-related activities within religious settings, and a control variable representing survey year.
+
+	The regression model produced an R² value of 0.059, indicating that approximately 5.9% of the variance in GPA is explained by the variables included in the model. While this value is relatively small, it is consistent with expectations in social science research, where academic performance is influenced by many complex and interacting factors.
+
+[Insert Table 3 here – Regression Results Table (OLS output)]
+ OLS Regression Results
+==============================================================================
+Dep. Variable:               gpa_norm   R-squared:                       0.059
+Model:                            OLS   Adj. R-squared:                  0.052
+Method:                 Least Squares   F-statistic:                     8.041
+Date:                Fri, 06 Mar 2026   Prob (F-statistic):           1.27e-11
+Time:                        13:09:53   Log-Likelihood:                 597.65
+No. Observations:                1164   AIC:                            -1175.
+Df Residuals:                    1154   BIC:                            -1125.
+Df Model:                           9
+Covariance Type:            nonrobust
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                   -7.0472      3.047     -2.313      0.021     -13.026      -1.069
+music_lessons           -0.0016      0.005     -0.345      0.730      -0.011       0.007
+music_participation      0.0034      0.005      0.674      0.501      -0.007       0.013
+instrument_home         -0.0096      0.003     -2.942      0.003      -0.016      -0.003
+instrument_frequency     0.0014      0.004      0.351      0.726      -0.006       0.009
+electronics_music        0.0009      0.005      0.197      0.844      -0.008       0.010
+arts_tutoring           -0.0093      0.002     -3.992      0.000      -0.014      -0.005
+arts_community           0.0041      0.002      2.000      0.046    7.88e-05       0.008
+arts_religious           0.0061      0.002      2.634      0.009       0.002       0.011
+year                     0.0039      0.002      2.583      0.010       0.001       0.007
+==============================================================================
+Omnibus:                      193.270   Durbin-Watson:                   1.943
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              382.646
+Skew:                          -0.978   Prob(JB):                     8.12e-84
+Kurtosis:                       5.016   Cond. No.                     1.44e+06
+==============================================================================
+
+
+	Among the predictors included in the model, several variables were statistically significant. The presence of a musical instrument in the home remained a significant predictor of GPA even after controlling for other variables. In similar fashion, participation in arts tutoring, community arts groups, and arts participation within religious settings also produced statistically significant coefficients.
+
+	Surprisingly, variables representing direct music participation, such as music lessons, general music participation, and frequency of music listening, did not produce statistically significant results in the regression model. This finding suggests that the relationship between music and academic performance may operate indirectly through broader environmental factors rather than through music participation alone.
+
+Overall interpretation (needs work)
+
+	Taken together, the results of this analysis suggest that music education is not a strong independent predictor of academic performance when measured using simple binary variables. However, certain environmental factors related to music—particularly the presence of a musical instrument in the home—show a consistent relationship with GPA across multiple datasets.
+
+	This finding supports the idea that music education may function as part of a broader network of social, cultural, and educational influences rather than as a single causal factor. Access to musical instruments, participation in arts activities, and exposure to supportive learning environments may all contribute to academic outcomes in ways that are not fully captured by simple measures of music participation.
+
+
+
+
+

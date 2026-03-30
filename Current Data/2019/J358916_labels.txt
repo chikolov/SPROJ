@@ -1,0 +1,28 @@
+****** PSID DATA CENTER ************************* 
+****** Variable labels for JobID = 358916 ******* 
+
+Variable    Labels
+
+KIDS       Sum of All KID Flags                    
+KID19      KID2019 = 1 if exists, else missing     
+ER30001    1968 INTERVIEW NUMBER                   
+ER30002    PERSON NUMBER                         68
+ER32000    SEX OF INDIVIDUAL                       
+ER32006    WHETHER SAMPLE OR NONSAMPLE             
+ER34701    2019 INTERVIEW NUMBER                   
+ER34702    SEQUENCE NUMBER                       19
+ER34703    RELATION TO REFERENCE PERSON          19
+P19REL     PCG CHILD RELEASE NUMBER 19             
+P19E5      MUSICAL INSTRUMENTS IN HOME 19          
+P19E6      FREQ USE MUSICAL INSTRUMENT 19          
+P19E10_09  TUTORING SUBJECT - ARTS 19              
+P19E15     TAKE LESSONS 19                         
+P19E16_3   LESSONS - MUSIC 19                      
+P19E26_5   COMMUNITY GROUP - ART 19                
+P19E33_6   OTHER RELIG - PERFORMANCE 19            
+P19E53A    FREQ CHILD USE ELECTR FOR MUSIC 19      
+C19REL     CHILD RELEASE NUMBER 19                 
+C19B12     GPA 19                                  
+C19B13     GPA SCALE 19                            
+
+*** End of labels ******************************* 
