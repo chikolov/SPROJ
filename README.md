@@ -1,5 +1,4 @@
 
-```markdown
 # Quantitative Analysis of Music Education and Academic Performance (PSID-CDS)
 
 <p align="center">
@@ -58,7 +57,7 @@ senior_project/
 │
 └── README.md                   # Project documentation
 
----
+```
 ---
 
 ## Key Findings & Methodology
@@ -78,7 +77,5 @@ senior_project/
 * **Data Visualization:** `Matplotlib`, `Seaborn`
 * **Data Source:** Panel Study of Income Dynamics Child Development Supplement (PSID-CDS)
 
-
-```
 
 ```
