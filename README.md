@@ -54,12 +54,11 @@ senior_project/
 ├── docs/                       # Academic deliverables and presentation assets
 │   ├── final_writing.pdf       # Complete senior thesis written report
 │   ├── poster.pdf              # Final academic research presentation poster
-│   └── logos/                 # Graphics and institutional logos
+│   └── logos/                  # Graphics and institutional logos
 │
 └── README.md                   # Project documentation
 
-```
-
+---
 ---
 
 ## Key Findings & Methodology
