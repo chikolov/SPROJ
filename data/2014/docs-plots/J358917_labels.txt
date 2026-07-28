@@ -1,0 +1,28 @@
+****** PSID DATA CENTER ************************* 
+****** Variable labels for JobID = 358917 ******* 
+
+Variable    Labels
+
+KIDS       Sum of All KID Flags                    
+KID14      KID2014 = 1 if exists, else missing     
+ER30001    1968 INTERVIEW NUMBER                   
+ER30002    PERSON NUMBER                         68
+ER32000    SEX OF INDIVIDUAL                       
+ER32006    WHETHER SAMPLE OR NONSAMPLE             
+ER34201    2013 INTERVIEW NUMBER                   
+ER34202    SEQUENCE NUMBER                       13
+ER34203    RELATION TO HEAD                      13
+P14REL     PCG CHILD RELEASE NUMBER 14             
+P14E5      MUSICAL INSTRUMENTS IN HOME 14          
+P14E6      FREQ USE MUSICAL INSTRUMENT 14          
+P14E10_09  TUTORING SUBJECT - ARTS 14              
+P14E15     TAKE LESSONS 14                         
+P14E16_3   LESSONS - MUSIC 14                      
+P14E26_5   COMMUNITY GROUP - ART 14                
+P14E33_6   OTHER RELIG - PERFORMANCE 14            
+P14E53     FREQ CHILD USE ELECTR FOR TV/MUSIC 14   
+C14REL     CHILD RELEASE NUMBER 14                 
+C14B12     GPA 14                                  
+C14B13     GPA SCALE 14                            
+
+*** End of labels ******************************* 
